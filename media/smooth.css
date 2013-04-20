@@ -135,8 +135,10 @@ html[xmlns] .slides {display: block;}
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   color: #fff !important;
+  margin: 0;
   padding: 10px 20px !important;
   text-shadow: none !important;
+  text-align: left;
 }
 .vid-descr{
   background: #333;
@@ -144,13 +146,18 @@ html[xmlns] .slides {display: block;}
   border-bottom-right-radius: 5px;
   color: #fff;
   font-size: 11px;
-  margin: 10px 0;
+  margin: 0;
   padding: 10px 20px;
+  text-align: left;
+}
+.vimeography-thumbnail{
+  position: relative;
 }
 .vimeography-thumbnail a{
   border-radius: 4px;
   color: #fff;
   font-size: 16px;
+  left: 0;
   position: absolute;
   top: 0;
   opacity: 0;
@@ -158,6 +165,7 @@ html[xmlns] .slides {display: block;}
   height: 88px;
   background: rgba(0, 0, 0, .75);
   padding: 10px;
+  text-align: left;
   text-decoration: none;
   font-weight: 500;
   outline: none;
