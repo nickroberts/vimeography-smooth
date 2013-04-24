@@ -25,7 +25,14 @@
 
 	(function($){
 
+		var replaceURLWithHTMLLinks = function(text) {
+			var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+			return text.replace(exp,"<a href='$1'>$1</a>");
+		}
+
 		$(document).ready(function(){
+
+			$('#vimeography-gallery-{{gallery_id}} .vid-descr').html(replaceURLWithHTMLLinks($('#vimeography-gallery-{{gallery_id}} .vid-descr').html()));
 
 			$('#vimeography-gallery-{{gallery_id}}').fitVids();
 
@@ -64,7 +71,7 @@
 					$(this).animate({'opacity':1}, 300);
 				});
 				$('#vimeography-gallery-{{gallery_id}} .vid-descr').animate({'opacity':0}, 300, 'linear', function(){
-					$(this).html(descr);
+					$(this).html(replaceURLWithHTMLLinks(descr));
 					$(this).animate({'opacity':1}, 300);
 				});
 	    		e.preventDefault();
